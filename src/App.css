@@ -1,0 +1,29 @@
+.app{
+    width:100%;
+}
+
+@font-face {
+    font-family: 'GTAmerica';
+    src: url('./GTAmerica/gt-america-expanded-bold-webfont.woff2') format('woff2'),
+         url('./GTAmerica/gt-america-expanded-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family:'GTAmerica';
+}
+
+img{
+    max-height:50%;
+    max-width:50%; 
+}
+.logo{ 
+    display:block;
+    margin-left:25%;
+    margin-right:auto;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

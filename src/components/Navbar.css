@@ -1,0 +1,25 @@
+
+.bottom{
+    margin-left:5%;   
+    position:fixed;
+    bottom:20px;
+}
+ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+ul li{
+    display:inline;
+    color:black;
+    font-size:20px;
+}
+a{
+    color:gray;
+    text-decoration: none;
+}
+
+a:hover{
+    color:white;
+    transition:0.3s;
+}
