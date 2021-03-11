@@ -1,16 +1,14 @@
-import React from 'react'
-import Hero from '../Hero'
-import '../button.css'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react'
 import Game from '../Game'
-function Actualplay() {
+export default class Actualplay extends Component {
+    state={
+        visible:true
+    };
+    render() {
     return (
         <div>
-            <button className='playbtn' onClick={Game}>
-            Play
-            </button>
+            {this.state.visible? <button onClick={()=>{this.setState({visible:false});}}> Play </button>:<Game/> }
         </div>
     )
 }
-
-export default Actualplay
+}

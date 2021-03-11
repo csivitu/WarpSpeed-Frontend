@@ -1,16 +1,15 @@
 import React from 'react'
 import Navbar from '../Navbar'
 import Hero from '../Hero'
+import Login from '../Login'
 import Application from '../Application'
-import UserProvider from '../../Providers/UserProvider'
+import userslice from '../../features/userslice'
 
 function Play() {
     return (
         <div>
             <div className="sign-up">
-            <UserProvider>
         <Application />
-            </UserProvider>
             </div>
             <Hero />
             <Navbar />

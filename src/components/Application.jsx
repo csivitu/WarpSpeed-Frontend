@@ -1,21 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Router } from "@reach/router";
-import SignIn from "./SignIn";
-import SignUp from "./SignUp";
-import ProfilePage from "./ProfilePage";
-import PasswordReset from "./PasswordReset";
-function Application() {
-  const user = null;
-  return (
-        user ?
-        <ProfilePage />
-      :
-        <Router>
-          <SignUp path="signUp" />
-          <SignIn path="/" />
-          <PasswordReset path = "passwordReset" />
-        </Router>
+import Login from "./Login";
+import Game from './Game'
+import {login, logout, selectUser} from '../features/userslice'
+import {useSelector,useDispatch} from 'react-redux';
+import { auth } from "../firebase";
 
+function Application() {
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  useEffect(() => {
+      auth.onAuthStateChanged((authUser)=>{
+        if(authUser){
+          dispatch(login({
+            uid:authUser.uid,
+            email:authUser.email,
+            displayName:authUser.displayName,
+          }))
+        }else{
+            dispatch(logout())
+        }
+      })
+    
+  }, [dispatch])
+  return (
+    <div className="app">
+      {user?(
+        <>
+        <Game />
+        </>
+      ):(
+        <Login/>
+      )}
+      
+      
+    </div>
   );
 }
+
 export default Application;
