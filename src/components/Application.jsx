@@ -1,41 +1,51 @@
-import React, { useEffect } from "react";
-import { Router } from "@reach/router";
-import Login from "./Login";
+import React, { Component } from 'react'
+import { StyledFirebaseAuth } from 'react-firebaseui'
+import firebase from '../firebase'
 import Game from './Game'
-import {login, logout, selectUser} from '../features/userslice'
-import {useSelector,useDispatch} from 'react-redux';
-import { auth } from "../firebase";
 
-function Application() {
-  const dispatch = useDispatch();
-  const user = useSelector(selectUser);
-  useEffect(() => {
-      auth.onAuthStateChanged((authUser)=>{
-        if(authUser){
-          dispatch(login({
-            uid:authUser.uid,
-            email:authUser.email,
-            displayName:authUser.displayName,
-          }))
-        }else{
-            dispatch(logout())
-        }
+export class Application extends Component {
+  state={
+    isLogIn:false,
+  }
+
+
+  uiConfig={
+    signInFlow: "popup",
+    signInOptions:[firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+    callbacks:{
+      signInSuccess:()=>false}
+
+    }
+
+    componentDidMount = () => {
+      firebase.auth().onAuthStateChanged(user =>{
+        this.setState({
+          isLogIn: !!user
+        })
       })
-    
-  }, [dispatch])
-  return (
-    <div className="app">
-      {user?(
-        <>
-        <Game />
+    }
+  
+
+  
+  render() {
+    return (
+      <div>
+        {this.state.isLogIn ? (
+          <>
+        <div>Signed in! </div>
+        <button onClick={()=>firebase.auth().signOut()}> Sign out</button>
         </>
-      ):(
-        <Login/>
-      )}
-      
-      
-    </div>
-  );
+        ):
+        (
+          <StyledFirebaseAuth
+            uiConfig={this.uiConfig}
+            firebaseAuth={firebase.auth()}
+          />
+        )
+        }
+      </div>
+    )
+  }
 }
 
-export default Application;
+export default Application

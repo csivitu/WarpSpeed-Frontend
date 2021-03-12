@@ -1,21 +1,13 @@
-import React from 'react'
-import './Game.css' 
+import React, { Component } from 'react'
 
-const Checking=<h1>Hello </h1>
-
-
-
-function Game() {
-    return (
-        <div className='Menu'>
-            <div className="videodiv">
-                <div className="textwords"> 
-                {Checking}
-                </div>
-                <video className='gamebg' src='/videos/gamebg.mp4' autoPlay muted loop></video>
+export class Game extends Component {
+    render() {
+        return (
+            <div>
+                
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Game
