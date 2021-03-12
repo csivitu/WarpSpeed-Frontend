@@ -12,6 +12,7 @@
     "react-firebaseui": "^4.1.0",
     "react-redux": "^7.2.2",
     "react-scripts": "4.0.3",
+    "use-sound": "^2.0.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

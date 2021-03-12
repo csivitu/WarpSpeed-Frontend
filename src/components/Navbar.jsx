@@ -8,7 +8,7 @@ function Navbar() {
         <>
         <nav className="bottom">
             <div className="btns">
-                <ul>
+                <ul id="navbarlist">
                 <li style={{marginRight:'15em'}}><Link to="/" className="nav-links"> Base </Link> </li>
                 <li style={{marginRight:'15em'}}><Link to="/leaderboard" className="nav-links">Leaderboard </Link> </li>
                 <li style={{marginRight:'15em'}}><Link to="/play" className="nav-links">Play </Link> </li>

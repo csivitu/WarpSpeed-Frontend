@@ -1,0 +1,30 @@
+
+.afterlogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:25%;
+}
+
+.buttons,StyledFirebaseAuth {
+    cursor:pointer;
+    background: none; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    border: 0.15em solid white;
+    text-transform: uppercase;
+  }
+.buttons:hover{
+    border: 0.15em solid white;
+    background-color: white;
+    transition:0.5s;
+    color:black;
+
+}

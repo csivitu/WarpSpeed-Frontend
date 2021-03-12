@@ -9,7 +9,7 @@ ul{
     margin:0;
     padding:0;
 }
-ul li{
+#navbarlist li{
     display:inline;
     color:black;
     font-size:20px;
