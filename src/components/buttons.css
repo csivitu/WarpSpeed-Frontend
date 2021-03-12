@@ -6,12 +6,12 @@
     margin-top:25%;
 }
 
-.buttons,StyledFirebaseAuth {
+.buttons{
     cursor:pointer;
-    background: none; /* Green */
+    background: none;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -20,6 +20,7 @@
     height: 100%;
     border: 0.15em solid white;
     text-transform: uppercase;
+    position:relative;
   }
 .buttons:hover{
     border: 0.15em solid white;

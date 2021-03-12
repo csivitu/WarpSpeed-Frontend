@@ -7,8 +7,8 @@ const Checking=<h1>Hello </h1>
 
 function Game() {
     return (
-        <div className='Menu'>
-            <div className="videodiv">
+        <div className="main">
+            <div className="gamewindow">
                 <div className="textwords"> 
                 {Checking}
                 </div>
