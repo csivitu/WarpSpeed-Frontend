@@ -1,11 +1,11 @@
 import '../../App.css'
-import Hero from '../Hero'
+import '../bg.css'
 
 function Home(){
     return(
         <div className="inside">
             <img className="logo" src="../images/Warpspeed.png" />
-            <Hero />
+            <video src="/videos/base.mp4" autoPlay loop muted type="video/mp4" className="bg"/>
         </div>
     
     )

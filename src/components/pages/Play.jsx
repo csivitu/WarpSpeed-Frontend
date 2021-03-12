@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../Navbar'
-import Hero from '../Hero'
 import Application from '../Application'
 
 function Play() {
@@ -8,6 +7,7 @@ function Play() {
         <div>
             <div className="sign-up">
         <Application />
+        <video src="/videos/background.mp4" autoPlay loop muted type="video/mp4" className="bg" />
             </div>
             <Navbar />
         </div>

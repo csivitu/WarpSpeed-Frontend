@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyledFirebaseAuth } from 'react-firebaseui'
 import firebase from '../firebase'
+import Actualplay from './Actualplay'
 import Game from './Game'
 
 export class Application extends Component {
@@ -32,7 +33,7 @@ export class Application extends Component {
       <div>
         {this.state.isLogIn ? (
           <>
-        <div>Signed in! </div>
+        <div><Actualplay/> </div>
         <button onClick={()=>firebase.auth().signOut()}> Sign out</button>
         </>
         ):

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Game from '../Game'
+import Game from './Game'
 export default class Actualplay extends Component {
     state={
         visible:true
