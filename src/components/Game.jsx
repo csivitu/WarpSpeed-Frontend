@@ -22,8 +22,8 @@ function Game() {
   });
   
     return (
-        <div className='Menu'>
-            <div className="videodiv">
+        <div className="main">
+            <div className="gamewindow">
                 <div className="textwords"> 
                 <h1>{randomItem1}</h1>
                 <h1>{randomItem2}</h1>
