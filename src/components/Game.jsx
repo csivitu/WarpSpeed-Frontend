@@ -6,7 +6,7 @@ import { generate } from './Words'
 const initialWords=generate()
 
 const Placeword = () =>{
-    var words=" " /* add the array of words here */
+    var words="Hello, This," /* add the array of words here */
     var word="Apple"
     var newWord=document.createElement("div");
     newWord.innerHTML=word;
@@ -19,7 +19,6 @@ const Placeword = () =>{
     newWord.style.right="0px";
 
 }
-var userwordlist=[];
 var userword="";
 
 
@@ -33,20 +32,18 @@ function Game() {
 
 
     useKeyPress(key => {
-        console.log(key);
         if (key!=' '){
             userword+=key;
         }
         console.log(userword);
         if (key==' '){
-            userwordlist.push(userword);
+            Checkingword();
             userword="";
-            console.log(userwordlist);
+
         }
     });
     const Checkingword = () =>{
-        console.log(initialWords);
-        if (userwordlist[0].localeCompare("Hello")==0){
+        if (userword==="Hello"){
             document.getElementById("textwords").style.display="none";
             console.log("this function executed");
 
@@ -59,7 +56,6 @@ function Game() {
             <div className="gamewindow">
                 <div id="textwords">
                     <h1>Hello</h1>
-                    {Checkingword}
             
 
                         
