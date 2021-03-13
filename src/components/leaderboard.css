@@ -1,37 +1,20 @@
-
-
-
 h1{
     color: white;
-    
     text-decoration: underline;
     margin-top: 80px;
     font-size: 50px !important;
-    
-    
 }
 
-
 table {
-    
   margin-top: 30px;
   width: 100%;
 } 
 
-
-
-
 .vals{
-  
-  
   height: 50px;
-  
-  
-  
 }
 
 td {
-  
   width: 33.3%;
   color: white;
   text-align: center;

@@ -2,19 +2,25 @@
     margin:0;
     top:0;
     left:0;
-    padding:0;
+    padding:0; 
     max-height:100%;
     max-width:100%;
-    position:relative;
+    position:fixed;
 }
+
+.abovegamewindow{
+    margin:0 auto;
+    width:50%;
+}
+
 .gamewindow{
     margin:0 auto;
     top:0;
     height:1280px;
     width:720px;
     position:relative;
-
 }
+
 .gamebg{
     width:auto;
     height:auto;
@@ -22,7 +28,6 @@
 }
 
 h1{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:2em;
     color:white;
 }
@@ -32,8 +37,8 @@ h1{
     height:100%;
     animation-name:words;
     animation-duration:10s;
-
 }
+
 @keyframes words{
     0% {transform:translate(0%,0%);}
     100% {transform:translate(100%,0%)}

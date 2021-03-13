@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../Navbar'
 import Application from '../Application'
 
 function Play() {

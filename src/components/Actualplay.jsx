@@ -11,12 +11,14 @@ export default class Actualplay extends Component {
     return (
         <div>
             {this.state.visible ? (
-            <div className="afterlogin">
-                <ul>
-                <li><button className="buttons" onClick={()=>{this.setState({visible:false});}}>Start</button> </li>
-                <br></br>
-                <li><button className="buttons" onClick={()=>firebase.auth().signOut()}>Sign out</button> </li>
-                </ul>
+            <div className="container">
+                <div className="afterlogin">
+                    <ul>
+                    <li><button className="buttons" onClick={()=>{this.setState({visible:false});}}>Start</button> </li>
+                    <br></br>
+                    <li><button className="buttons" onClick={()=>firebase.auth().signOut()}>Sign out</button> </li>
+                    </ul>
+                </div>
             </div>
             )
             :

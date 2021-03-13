@@ -1,35 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Game.css' 
 import useKeyPress from './hooks/usekeypress';
-import { generate } from './Words'
+import wordarray from './words/file.json'
 
-const initialWords=generate()
+var loggedwords=[]
+var myarray=wordarray.wordlist;
+var userword="";
+var score=0;
 
 const Placeword = () =>{
-    var words="Hello, This," /* add the array of words here */
-    var word="Apple"
+    var word=myarray[Math.floor(Math.random()*myarray.length)];
     var newWord=document.createElement("div");
     newWord.innerHTML=word;
-    newWord.className=word;
-    console.log("This function is being executed");
-
+    newWord.id=word;
+    loggedwords.push(word);
+    console.log(loggedwords);
     newWord.style.color="#ffffff"
-    newWord.style.position="fixed"
-    newWord.style.top="0px";
-    newWord.style.right="0px";
-
+    newWord.style.position="absolute"
+    newWord.style.top=Math.random() * 300 + "px";
+    document.getElementById("textwords").appendChild(newWord);
+    console.log("this is the score"+score);
 }
-var userword="";
-
 
 function Game() {
-    const [leftPadding,setLeftPadding]=useState(
-        new Array(20).fill('').join(''),
-    );
-    const [outgoingChars,setOutgoingChars]=useState('');
-    const [currentChar,setCurrentChar]=useState(initialWords.charAt(0));
-    const [incomingChars,setIncomingChars]=useState(initialWords.substr(1));
-
+    useEffect(() => {
+        let x=setInterval(Placeword,5000);
+        return () => {
+            clearInterval(x);
+        };
+    }, [])
 
     useKeyPress(key => {
         if (key!=' '){
@@ -43,24 +42,25 @@ function Game() {
         }
     });
     const Checkingword = () =>{
-        if (userword==="Hello"){
-            document.getElementById("textwords").style.display="none";
-            console.log("this function executed");
-
+        let a=loggedwords.indexOf(userword)
+        if (loggedwords.indexOf(userword)==0 || loggedwords.indexOf(userword)!=-1){
+            var textwords=document.getElementById(userword);
+            textwords.parentNode.removeChild(textwords)
+            console.log("Checkingword is being executed");
+            loggedwords.splice(a,1);
+            score+=100;
         }
     }
     
     return (
            
         <div className="main">
+            <div className="abovegamewindow">
+            <h1>Score:{score}</h1> 
+            </div>
             <div className="gamewindow">
-                <div id="textwords">
-                    <h1>Hello</h1>
-            
-
-                        
-                </div>
-                <video className='gamebg' src='/videos/gamebg.mp4' autoPlay muted loop></video> 
+                <div id="textwords"/> 
+                <video className='gamebg' src='/videos/gamebg.mp4' autoPlay muted loop /> 
             </div>
         </div>
     )

@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import {auth} from 'firebase';
 import 'firebase/analytics';
 
 var firebaseConfig = {

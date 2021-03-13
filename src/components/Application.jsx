@@ -9,13 +9,11 @@ export class Application extends Component {
     isLogIn:false,
   }
 
-
   uiConfig={
     signInFlow: "popup",
     signInOptions:[firebase.auth.GoogleAuthProvider.PROVIDER_ID],
     callbacks:{
       signInSuccess:()=>false}
-
     }
 
     componentDidMount = () => {
@@ -25,8 +23,6 @@ export class Application extends Component {
         })
       })
     }
-  
-
   
   render() {
     return (
@@ -40,7 +36,7 @@ export class Application extends Component {
           <StyledFirebaseAuth
             uiConfig={this.uiConfig}
             firebaseAuth={firebase.auth()}
-          />
+            className="google"/>
         )
         }
       </div>
