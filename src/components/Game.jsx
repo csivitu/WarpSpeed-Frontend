@@ -4,7 +4,6 @@ import useKeyPress from './hooks/usekeypress';
 import { generate } from './Words'
 
 const initialWords=generate()
-var userword="";
 
 const Placeword = () =>{
     var words=" " /* add the array of words here */
@@ -12,7 +11,7 @@ const Placeword = () =>{
     var newWord=document.createElement("div");
     newWord.innerHTML=word;
     newWord.className=word;
-
+    console.log("This function is being executed");
 
     newWord.style.color="#ffffff"
     newWord.style.position="fixed"
@@ -20,6 +19,8 @@ const Placeword = () =>{
     newWord.style.right="0px";
 
 }
+var userwordlist=[];
+var userword="";
 
 
 function Game() {
@@ -37,22 +38,28 @@ function Game() {
             userword+=key;
         }
         console.log(userword);
+        if (key==' '){
+            userwordlist.push(userword);
+            userword="";
+            console.log(userwordlist);
+        }
     });
-    function CheckingWord(){
+    const Checkingword = () =>{
         console.log(initialWords);
-        if (userword.localeCompare(initialWords)===0){
-            document.getElementById("textword").style.display="none";
+        if (userwordlist[0].localeCompare("Hello")==0){
+            document.getElementById("textwords").style.display="none";
+            console.log("this function executed");
 
         }
     }
+    
     return (
            
         <div className="main">
             <div className="gamewindow">
                 <div id="textwords">
-                    <div className="Apple">
-                        Apple
-                    </div>
+                    <h1>Hello</h1>
+                    {Checkingword}
             
 
                         
