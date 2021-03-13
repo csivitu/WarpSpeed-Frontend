@@ -1,27 +1,34 @@
-.Menu{
-    margin:0;
-    top:0;
-    padding:0;
+.Menu {
+  margin: 0;
+  top: 0;
+  padding: 0;
 }
-.videodiv{
-    top:50%;
-    margin:0 auto;
-    width:50%;
+.videodiv {
+  top: 50%;
+  margin: 0 auto;
+  width: 50%;
 }
 
-
-h1{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:1.5em;
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.5em;
+  color: white;
+  margin-top: 2%;
 }
-.textwords{
-    width:100%;
-    height:100%;
-    animation-name:words;
-    animation-duration:10s;
-
+.textwords {
+  width: 100%;
+  height: 100%;
+  animation-name: words;
+  animation-duration: 10s;
 }
-@keyframes words{
-    0% {transform:translate(0%,0%);}
-    100% {transform:translate(100%,0%)}
+@keyframes words {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(100%, 0%);
+  }
+}
+iframe {
+  display: none;
 }
