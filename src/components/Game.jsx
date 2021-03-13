@@ -50,7 +50,9 @@ function Game() {
         <div className="main">
             <div className="gamewindow">
                 <div id="textwords">
-                {Placeword} 
+                    <div className="Apple">
+                        Apple
+                    </div>
             
 
                         
