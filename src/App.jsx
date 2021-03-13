@@ -5,7 +5,14 @@ import './App.css';
 import Home from './components/pages/Home';
 import Leaderboard from './components/pages/Leaderboard';
 import Play from './components/pages/Play';
+
+
+
+
+
+
 function App() {
+  
   return (
     <div className="app">
     <Router>
