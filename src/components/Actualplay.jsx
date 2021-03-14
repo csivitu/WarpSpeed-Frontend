@@ -24,7 +24,6 @@ export default class Actualplay extends Component {
             :
             (<div>
             <Game/>
-            <button className="buttons" onClick={()=>firebase.auth().signOut()}> Sign out</button>
             </div>)
             }
         </div>

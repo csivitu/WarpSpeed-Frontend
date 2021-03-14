@@ -16,8 +16,11 @@ const Placeword = () =>{
     loggedwords.push(word);
     console.log(loggedwords);
     newWord.style.color="#ffffff"
-    newWord.style.position="absolute"
+    newWord.style.position="absolute";
     newWord.style.top=Math.random() * 300 + "px";
+    newWord.style.animationName="words";
+    newWord.style.animationDuration="15s";
+    newWord.style.transitionTimingFunction="linear";
     document.getElementById("textwords").appendChild(newWord);
     console.log("this is the score"+score);
 }
@@ -27,10 +30,13 @@ function Game() {
         let x=setInterval(Placeword,5000);
         return () => {
             clearInterval(x);
+            score=0;
+            loggedwords=[]
         };
     }, [])
 
     useKeyPress(key => {
+
         if (key!=' '){
             userword+=key;
         }
@@ -47,7 +53,6 @@ function Game() {
             var textwords=document.getElementById(userword);
             textwords.parentNode.removeChild(textwords)
             console.log("Checkingword is being executed");
-            loggedwords.splice(a,1);
             score+=100;
         }
     }

@@ -27,8 +27,8 @@ export class Application extends Component {
   render() {
     return (
       <div>
-        {this.state.isLogIn ? (
-          <>
+        {this.state.isLogIn ? ( 
+        <>
         <Actualplay/>
         </>
         ):
