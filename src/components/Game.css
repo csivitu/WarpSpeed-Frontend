@@ -5,7 +5,6 @@
     padding:0; 
     max-height:100%;
     max-width:100%;
-    position:fixed;
 }
 
 .abovegamewindow{
@@ -16,10 +15,14 @@
 
 .gamewindow{
     margin:0 auto;
-    top:0;
     height:100%;
     width:100%;
     position:fixed;
+}
+.gameover{
+    margin:0 50%;
+    width:33%;
+    position:absolute;
 }
 
 .gamebg{
@@ -29,7 +32,7 @@
 }
 
 h1{
-    font-size:2em;
+    font-size:10em;
     color:white;
 }
 #textwords{
@@ -39,10 +42,10 @@ h1{
 }
 
 @keyframes words{
-    from{
+    0%{
         left:-5%;
     }
-    to{
+    100%{
         left:100%;
     }
 }
