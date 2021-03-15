@@ -10,6 +10,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GTAmericaThin';
+    src: url('./GTAmerica/gt-america-expanded-thin-webfont.woff2') format('woff2'),
+         url('./GTAmerica/gt-america-expanded-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 *{
     font-family:'GTAmerica';
 }

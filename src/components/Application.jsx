@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyledFirebaseAuth } from 'react-firebaseui'
 import firebase from '../firebase'
-import Actualplay from './Actualplay'
+import Actualplay from './AfterLogin'
 import './buttons.css'
 
 export class Application extends Component {
@@ -32,11 +32,13 @@ export class Application extends Component {
         <Actualplay/>
         </>
         ):
-        (
+        (<>
           <StyledFirebaseAuth
             uiConfig={this.uiConfig}
             firebaseAuth={firebase.auth()}
             className="google"/>
+            <video src="/videos/background.mp4" autoPlay loop muted type="video/mp4" className="bg" />
+        </>
         )
         }
       </div>

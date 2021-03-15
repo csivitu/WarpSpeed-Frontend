@@ -7,6 +7,7 @@ var loggedwords=[]
 var myarray=wordarray.wordlist;
 var userword="";
 var score=0;
+var missedwords=0;
 
 const Placeword = () =>{
     var word=myarray[Math.floor(Math.random()*myarray.length)];
@@ -22,16 +23,24 @@ const Placeword = () =>{
     newWord.style.animationDuration="15s";
     newWord.style.transitionTimingFunction="linear";
     document.getElementById("textwords").appendChild(newWord);
-    console.log("this is the score"+score);
+    newWord.addEventListener("animationend",()=>{
+        missedwords+=1;
+        newWord.remove();
+        if (missedwords>10){
+            
+        }
+    })
+    console.log("this is the score "+score,"this is missedwords "+missedwords);
 }
 
 function Game() {
     useEffect(() => {
-        let x=setInterval(Placeword,5000);
+        let x=setInterval(Placeword,3000);
         return () => {
             clearInterval(x);
             score=0;
             loggedwords=[]
+            missedwords=0;
         };
     }, [])
 
@@ -44,7 +53,6 @@ function Game() {
         if (key==' '){
             Checkingword();
             userword="";
-
         }
     });
     const Checkingword = () =>{
@@ -58,7 +66,6 @@ function Game() {
     }
     
     return (
-           
         <div className="main">
             <div className="abovegamewindow">
             <h1>Score:{score}</h1> 

@@ -11,26 +11,26 @@ function Leaderboard() {
               <table id="lBoard" class="tabla" align ="center">
                 <tbody className='ranking'>
                     <tr className="vals">
-                      <td>#1</td>
-                      <td>LOGIC</td>
+                      <td>1</td>
+                      <td>sanjay</td>
                       <td>21600</td>
                     </tr>
 
                     <tr className="vals">
-                      <td>#1</td>
-                      <td>LOGIC</td>
+                      <td>2</td>
+                      <td>wooo</td>
                       <td>21600</td>
                     </tr>
 
                     <tr className="vals">
-                      <td>#1</td>
-                      <td>LOGIC</td>
+                      <td>3</td>
+                      <td>hooo</td>
                       <td>21600</td>
                     </tr>
 
                     <tr className="vals">
-                      <td>#1</td>
-                      <td>LOGIC</td>
+                      <td>4</td>
+                      <td>boo</td>
                       <td>21600</td>
                     </tr>
                   </tbody>
