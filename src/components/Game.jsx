@@ -24,7 +24,7 @@ function Game() {
             loggedwords=[]
             missedwords=0;
         };
-    }, [])
+    }, [game])
 
 
     const Placeword = () =>{
@@ -83,9 +83,6 @@ function Game() {
         <div className="main">
             {game ? (
                 <>
-                <div className="abovegamewindow">
-                <h1>Score:{score}</h1> 
-                </div>
                 <div className="gamewindow">
                     <div id="textwords"/> 
                     <video className='gamebg' src='/videos/gamebg.mp4' autoPlay muted loop /> 
