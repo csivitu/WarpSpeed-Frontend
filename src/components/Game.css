@@ -25,6 +25,9 @@
     position:absolute;
 }
 
+.playagainbtn{
+    position:fixed;
+}
 .gamebg{
     width:100%;
     height:100%;

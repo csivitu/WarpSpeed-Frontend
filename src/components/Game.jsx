@@ -4,13 +4,13 @@ import useKeyPress from './hooks/usekeypress';
 import wordarray from './words/file.json'
 import './buttons.css'
 
+
 var loggedwords=[]
 var myarray=wordarray.wordlist;
 var missedloggedwords=[]
 var userword="";
 var score=0;
 var missedwords=0;
-
 
 function Game() {
     const [game,setGame]=useState(true)
@@ -28,7 +28,7 @@ function Game() {
 
 
     const Placeword = () =>{
-        if (missedwords<=1){
+        if (missedwords<10){
             console.log("if condition is working");
             var word=myarray[Math.floor(Math.random()*myarray.length)];
             var newWord=document.createElement("div");
@@ -44,16 +44,20 @@ function Game() {
             newWord.style.animationDuration="10s";
             newWord.style.transitionTimingFunction="linear";
             document.getElementById("textwords").appendChild(newWord);
+            console.log("this is the score "+score,"missed words:"+missedwords+missedloggedwords);
+            console.log(game);
             newWord.addEventListener("animationend",()=>{
                 missedwords+=1;
                 newWord.remove();
                 missedloggedwords.push(word);
+                console.log("div deleted");
             })
-            console.log("this is the score "+score,"missed words:"+missedwords+missedloggedwords);
-            console.log(game);
+            
         }
-        else
+        else{
         setGame(false);
+        console.log("checking false");
+    }
     }
     
 
