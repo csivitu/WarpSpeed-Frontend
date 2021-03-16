@@ -46,12 +46,39 @@
     height:100%;
     font-size:25px;
 }
+.wordd{
+    transition-timing-function: linear;
+}
 
-@keyframes words{
+@keyframes stage1{
     0%{
         left:-5%;
     }
     100%{
+        left:100%;
+    }
+}
+@keyframes stage2{
+    0%{
+        left:-5%;
+    }
+    75%{
+        left:100%;
+    }
+}
+@keyframes stage3{
+    0%{
+        left:-5%;
+    }
+    50%{
+        left:100%;
+    }
+}
+@keyframes stage4{
+    0%{
+        left:-5%;
+    }
+    25%{
         left:100%;
     }
 }

@@ -13,7 +13,8 @@ var score=0;
 var missedwords=0;
 var correctuserwords=[]  //this needs to be sent to backend
 var userloggedwords=0;  //this needs to be sent to backend
-let x,y=3000,z=1;
+let x,y=3000,z=0;
+var stages=["stage1","stage2","stages3","stages4"]
 
 function Game() {
     const [game,setGame]=useState(true)
@@ -24,10 +25,14 @@ function Game() {
         return () => {
             clearInterval(x);
             score=0;
-            loggedwords=[]
+            loggedwords=[];
+            y=3000;
+            z=0;
             correctuserwords=[]
             userloggedwords=0
             missedwords=0;
+            nologgedwords=0;
+            missedloggedwords=[];
         };
     }, [game])
 
@@ -35,8 +40,8 @@ function Game() {
     const Placeword = () =>{
         if (userloggedwords%10==0){
             console.log("userloggedwords is working")
-            z=z+0.5;
-            y=(y/z);
+            z=z+100;
+            y=(y-z);
             console.log(y)
         }
         if (missedwords<10){
@@ -45,6 +50,7 @@ function Game() {
             var newWord=document.createElement("div");
             nologgedwords+=1;
             newWord.innerHTML=word;
+            newWord.className="wordd";
             newWord.id=word;
             loggedwords.push(word);
             console.log(loggedwords);
@@ -52,9 +58,29 @@ function Game() {
             newWord.style.position="absolute";
             newWord.style.top=Math.random() * 300 + "px";
             newWord.style.left="0px";
-            newWord.style.animationName="words";
-            newWord.style.animationDuration="10s";
-            newWord.style.transitionTimingFunction="linear";
+            newWord.style.animationName="stage1";
+            if (userloggedwords<=10){
+                //newWord.style.animationName="stage1";
+                newWord.style.animationDuration="10s"; 
+                console.log("stage1")
+            }
+            else if(userloggedwords>10 && userloggedwords<=50){
+                newWord.style.animationDuration="8s";
+                //newWord.style.animationName="stage2";
+                console.log("stage2")
+            }
+            else if(userloggedwords>50 && userloggedwords<=125){
+                newWord.style.animationDuration="6s";
+                //newWord.style.animationName="stage3";
+                console.log("stage3");
+            }
+            else if(userloggedwords>125)
+            {
+                newWord.style.animationDuration="4s";
+                //newWord.style.animationName="stage4";
+                console.log("stage4")
+            }
+            //newWord.style.transitionTimingFunction="linear";
             document.getElementById("textwords").appendChild(newWord);
             console.log("this is the score "+score,"missed words:"+missedwords+missedloggedwords);
             console.log(game);
