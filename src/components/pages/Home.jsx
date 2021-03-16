@@ -5,7 +5,7 @@ function Home(){
     return(
         <div className="inside">
             <img className="logo" src="../images/Warpspeed.png" />
-            <video src="/videos/base.mp4" autoPlay loop muted type="video/mp4" className="bg"/>
+            <video src="/videos/homepage.mp4" autoPlay loop muted type="video/mp4" className="bg"/>
         </div>
     
     )

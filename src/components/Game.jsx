@@ -2,36 +2,48 @@ import React, { useState, useEffect } from 'react'
 import './Game.css' 
 import useKeyPress from './hooks/usekeypress';
 import wordarray from './words/file.json'
-import './buttons.css'
 
 
-var loggedwords=[]
+var loggedwords=[] 
+var nologgedwords=0  //this needs to be sent to backend
 var myarray=wordarray.wordlist;
 var missedloggedwords=[]
 var userword="";
 var score=0;
 var missedwords=0;
+var correctuserwords=[]  //this needs to be sent to backend
+var userloggedwords=0;  //this needs to be sent to backend
+let x,y=3000,z=1;
 
 function Game() {
     const [game,setGame]=useState(true)
     useEffect(() => {
-        let x;
         if (game){
-        x=setInterval(Placeword,3000);}
+            x=setInterval(Placeword,y);
+        }
         return () => {
             clearInterval(x);
             score=0;
             loggedwords=[]
+            correctuserwords=[]
+            userloggedwords=0
             missedwords=0;
         };
     }, [game])
 
 
     const Placeword = () =>{
+        if (userloggedwords%10==0){
+            console.log("userloggedwords is working")
+            z=z+0.5;
+            y=(y/z);
+            console.log(y)
+        }
         if (missedwords<10){
             console.log("if condition is working");
             var word=myarray[Math.floor(Math.random()*myarray.length)];
             var newWord=document.createElement("div");
+            nologgedwords+=1;
             newWord.innerHTML=word;
             newWord.id=word;
             loggedwords.push(word);
@@ -59,6 +71,7 @@ function Game() {
         console.log("checking false");
     }
     }
+
     
 
     useKeyPress(key => {
@@ -69,13 +82,16 @@ function Game() {
         console.log(userword);
         if (key==' '){
             Checkingword();
+            userloggedwords+=1;
             userword="";
         }
     });
     const Checkingword = () =>{
         let a=loggedwords.indexOf(userword)
-        if (loggedwords.indexOf(userword)==0 || loggedwords.indexOf(userword)!=-1){
+        if (a==0 || a!=-1){
+            correctuserwords.push(userword);
             var textwords=document.getElementById(userword);
+            textwords.innerHTML="+100";
             textwords.parentNode.removeChild(textwords)
             console.log("Checkingword is being executed");
             score+=100;
@@ -88,6 +104,7 @@ function Game() {
             {game ? (
                 <>
                 <div className="gamewindow">
+                    <h1 className="score">SCORE:{score} MISSED WORDS:{missedwords}</h1>
                     <div id="textwords"/> 
                     <video className='gamebg' src='/videos/gamebg.mp4' autoPlay muted loop /> 
                 </div>

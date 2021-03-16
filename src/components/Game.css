@@ -26,7 +26,7 @@
 }
 
 .playagainbtn{
-    position:fixed;
+    position:inherit;
 }
 .gamebg{
     width:100%;
@@ -34,14 +34,17 @@
     object-fit: fill;
 }
 
-h1{
-    font-size:10em;
+.score{
+    font-size:2em;
     color:white;
+    position: inherit;
+    font-family:"GTAmericaThin";
 }
 #textwords{
     position:fixed;
     width:100%;
     height:100%;
+    font-size:25px;
 }
 
 @keyframes words{

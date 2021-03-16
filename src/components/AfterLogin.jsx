@@ -15,11 +15,10 @@ export default class Actualplay extends Component {
                 <div className="afterlogin">
                     <ul>
                     <li><button className="buttons" onClick={()=>{this.setState({visible:false});}}>Start</button> </li>
-                    <br></br>
                     <li><button className="buttons" onClick={()=>firebase.auth().signOut()}>Sign out</button> </li>
                     </ul>
                 </div>
-                <video src="/videos/background.mp4" autoPlay loop muted type="video/mp4" className="bg" />
+                <video src="/videos/loginpage.mp4" autoPlay loop muted type="video/mp4" className="bg" />
             </div>
             )
             :

@@ -39,8 +39,7 @@ export class Application extends Component {
             className="google"/>
             <video src="/videos/background.mp4" autoPlay loop muted type="video/mp4" className="bg" />
         </>
-        )
-        }
+        )}
       </div>
     )
   }
