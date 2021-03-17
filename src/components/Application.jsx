@@ -21,6 +21,16 @@ export class Application extends Component {
         this.setState({
           isLogIn: !!user
         })
+        if (user){
+          firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+            console.log(idToken)
+            // Send token to your backend via HTTPS
+            // ...
+          }).catch(function(error) {
+            console.log(error)
+            // Handle error
+          });
+        }
       })
     }
   
@@ -33,11 +43,13 @@ export class Application extends Component {
         </>
         ):
         (<>
-          <StyledFirebaseAuth
-            uiConfig={this.uiConfig}
-            firebaseAuth={firebase.auth()}
-            className="google"/>
-            <video src="/videos/background.mp4" autoPlay loop muted type="video/mp4" className="bg" />
+        <div className="signup">
+          <h2>sign up</h2>
+          <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
+          </div>
+            
+            <video src="/videos/homepage.mp4" autoPlay loop muted type="video/mp4" className="bg" />
+            
         </>
         )}
       </div>

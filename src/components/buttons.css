@@ -28,3 +28,11 @@
     transition:0.5s;
     color:black;
 }
+
+h2{
+    font-family:"GTAmericaThin" !important;
+    font-size:150px;
+    text-transform: uppercase;
+    color:white;
+    text-align:center;
+}

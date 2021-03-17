@@ -13,7 +13,7 @@ var score=0;
 var correctuserwords=[]  //this needs to be sent to backend
 var userloggedwords=0;  //this needs to be sent to backend
 let x,y=3000,z=0;
-var stages=["stage1","stage2","stages3","stages4"]
+//var stages=["stage1","stage2","stages3","stages4"]
 var missedwordsss=0;
 function Game() {
     const [game,setGame]=useState(true)
@@ -65,17 +65,17 @@ function Game() {
                 newWord.style.animationDuration="10s"; 
                 console.log("stage1")
             }
-            else if(userloggedwords>10 && userloggedwords<=50){
+            else if(userloggedwords>10 && userloggedwords<=25){
                 newWord.style.animationDuration="8s";
                 //newWord.style.animationName="stage2";
                 console.log("stage2")
             }
-            else if(userloggedwords>50 && userloggedwords<=125){
+            else if(userloggedwords>25 && userloggedwords<=50){
                 newWord.style.animationDuration="6s";
                 //newWord.style.animationName="stage3";
                 console.log("stage3");
             }
-            else if(userloggedwords>125)
+            else if(userloggedwords>50)
             {
                 newWord.style.animationDuration="4s";
                 //newWord.style.animationName="stage4";
