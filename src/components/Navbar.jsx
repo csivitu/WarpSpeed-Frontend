@@ -6,7 +6,7 @@ import soundURL from './sfx/hover.wav'
 
 function Navbar() {
     const [play,{stop}]=useSound(
-        soundURL,{volume:1});
+        soundURL,{volume:0.5});
         
     const [isHovering, setIsHovering] = React.useState(false);
 

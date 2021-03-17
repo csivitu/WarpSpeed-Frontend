@@ -10,16 +10,17 @@ var myarray=wordarray.wordlist;
 var missedloggedwords=[]
 var userword="";
 var score=0;
-var missedwords=0;
 var correctuserwords=[]  //this needs to be sent to backend
 var userloggedwords=0;  //this needs to be sent to backend
 let x,y=3000,z=0;
 var stages=["stage1","stage2","stages3","stages4"]
-
+var missedwordsss=0;
 function Game() {
     const [game,setGame]=useState(true)
+    const [missedwords,setMissedword]=useState(0)
     useEffect(() => {
         if (game){
+            setMissedword(0)
             x=setInterval(Placeword,y);
         }
         return () => {
@@ -30,9 +31,9 @@ function Game() {
             z=0;
             correctuserwords=[]
             userloggedwords=0
-            missedwords=0;
             nologgedwords=0;
             missedloggedwords=[];
+            missedwordsss=0;
         };
     }, [game])
 
@@ -44,7 +45,7 @@ function Game() {
             y=(y-z);
             console.log(y)
         }
-        if (missedwords<10){
+        if (missedwordsss<10){
             console.log("if condition is working");
             var word=myarray[Math.floor(Math.random()*myarray.length)];
             var newWord=document.createElement("div");
@@ -82,13 +83,19 @@ function Game() {
             }
             //newWord.style.transitionTimingFunction="linear";
             document.getElementById("textwords").appendChild(newWord);
-            console.log("this is the score "+score,"missed words:"+missedwords+missedloggedwords);
-            console.log(game);
+            console.log("this is the score "+score);
             newWord.addEventListener("animationend",()=>{
-                missedwords+=1;
-                newWord.remove();
-                missedloggedwords.push(word);
-                console.log("div deleted");
+                if (newWord.innerHTML!=="+100"){
+                    setMissedword(missedwords=>missedwords+1)
+                    newWord.remove();
+                    missedwordsss+=1;
+                    console.log("div is deleted")}
+                else{
+                    console.log("missed wordsss:"+missedwordsss)        
+                    newWord.remove();
+                    missedloggedwords.push(word);
+                    console.log("div deleted");
+                }
             })
             
         }
@@ -118,7 +125,7 @@ function Game() {
             correctuserwords.push(userword);
             var textwords=document.getElementById(userword);
             textwords.innerHTML="+100";
-            textwords.parentNode.removeChild(textwords)
+            //textwords.parentNode.removeChild(textwords)
             console.log("Checkingword is being executed");
             score+=100;
         }
@@ -140,7 +147,7 @@ function Game() {
         <div className="gamewindow">
             <button className="playagainbtn" onClick={()=>setGame(true)}> Play Again</button>
             <video src="/videos/gameover.mp4" autoPlay loop muted type="video/mp4" className="gameover"/>
-            <video className='gamebg' src='/videos/gamebg.mp4' autoPlay muted loop />
+            <video className='gamebg' src='/videos/gamebg.mp4' autoPlay loop muted />
         </div>
         </>
         }

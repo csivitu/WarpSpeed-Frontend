@@ -47,7 +47,8 @@
     font-size:25px;
 }
 .wordd{
-    transition-timing-function: linear;
+    animation-timing-function: linear;
+    /*transition-timing-function: cubic-bezier(.17,.67,.83,.67);*/ 
 }
 
 @keyframes stage1{
