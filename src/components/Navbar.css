@@ -12,9 +12,21 @@ ul{
 
 #navbarlist li{
     display:inline;
-    color:black;
-    font-size:20px;
+    color:white;
+    font-size:1.3em;
 }
+.navlinks img{
+    display:none;
+    opacity:0.45;
+    -moz-opacity:0.45;
+    filter:alpha(opacity=45);
+    width: 50px;
+    background-attachment: fixed;
+    background-image: url("../navbar.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 
 a{
     color:gray;

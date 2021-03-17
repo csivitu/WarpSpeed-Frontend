@@ -17,6 +17,14 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'GTAmericaRegular';
+    src: url('./GTAmerica/gt-america-compressed-regular-webfont.woff2') format('woff2'),
+         url('./GTAmerica/gt-america-compressed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 *{
     font-family:'GTAmerica';

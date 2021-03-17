@@ -39,14 +39,13 @@ function Game() {
 
 
     const Placeword = () =>{
-        if (userloggedwords%10==0){
+        console.log(userloggedwords)
+        if (userloggedwords%10===0){
             console.log("userloggedwords is working")
             z=z+100;
             y=(y-z);
-            console.log(y)
         }
         if (missedwordsss<10){
-            console.log("if condition is working");
             var word=myarray[Math.floor(Math.random()*myarray.length)];
             var newWord=document.createElement("div");
             nologgedwords+=1;
@@ -89,19 +88,16 @@ function Game() {
                     setMissedword(missedwords=>missedwords+1)
                     newWord.remove();
                     missedwordsss+=1;
-                    console.log("div is deleted")}
+                    }
                 else{
                     console.log("missed wordsss:"+missedwordsss)        
                     newWord.remove();
                     missedloggedwords.push(word);
-                    console.log("div deleted");
                 }
             })
-            
         }
         else{
         setGame(false);
-        console.log("checking false");
     }
     }
 
@@ -109,11 +105,11 @@ function Game() {
 
     useKeyPress(key => {
 
-        if (key!=' '){
+        if (key!==' '){
             userword+=key;
         }
         console.log(userword);
-        if (key==' '){
+        if (key===' '){
             Checkingword();
             userloggedwords+=1;
             userword="";
@@ -121,34 +117,30 @@ function Game() {
     });
     const Checkingword = () =>{
         let a=loggedwords.indexOf(userword)
-        if (a==0 || a!=-1){
+        if (a===0 || a!==-1){
             correctuserwords.push(userword);
             var textwords=document.getElementById(userword);
             textwords.innerHTML="+100";
-            //textwords.parentNode.removeChild(textwords)
-            console.log("Checkingword is being executed");
             score+=100;
         }
     }
     
     return (
-        
         <div className="main">
             {game ? (
                 <>
                 <div className="gamewindow">
                     <h1 className="score">SCORE:{score} MISSED WORDS:{missedwords}</h1>
                     <div id="textwords"/> 
-                    <video className='gamebg' src='/videos/gamebg.mp4' autoPlay muted loop /> 
+                    <video className='gamebg' src='/videos/gamebakground.mp4' autoPlay muted loop /> 
                 </div>
                 </>
         ):
         <>
-        <div className="gamewindow">
-            <button className="playagainbtn" onClick={()=>setGame(true)}> Play Again</button>
-            <video src="/videos/gameover.mp4" autoPlay loop muted type="video/mp4" className="gameover"/>
-            <video className='gamebg' src='/videos/gamebg.mp4' autoPlay loop muted />
+        <div className="gamewindow1">
+            <video onClick={()=>setGame(true)} src="/videos/gameover.mp4" autoPlay loop muted type="video/mp4" className="gameover" />
         </div>
+        <video className='gamebg' src='/videos/gamebg.mp4' autoPlay loop muted />
         </>
         }
         </div>
