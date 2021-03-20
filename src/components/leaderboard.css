@@ -4,7 +4,26 @@
     font-size: 50px !important;
     font-family:"GTAmericaThin" !important;
 }
+.tabla::-webkit-scrollbar {
+  width: 20px;
+}
 
+.tabla::-webkit-scrollbar-track {
+  background:  #555; 
+}
+
+.tabla::-webkit-scrollbar-thumb {
+  background: #f1f1f1; 
+}
+
+.tabla::-webkit-scrollbar-thumb:hover {
+  background: rgb(175, 175, 175); 
+}
+.tabla{
+  height:70vh;
+  overflow:auto;
+  display:block;
+}
 table {
   margin-top: 30px;
   width: 100%;
