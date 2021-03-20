@@ -82,7 +82,7 @@ function Game() {
                 newWord.style.animationDuration = "6s";
                 stages.current="RD-03"
             }
-            else if (userloggedwords > 50 && userloggedwords<75) {
+            else if (userloggedwords > 50 && userloggedwords<=75) {
                 newWord.style.animationDuration = "4s";
                 stages.current="RD-04"
             }
