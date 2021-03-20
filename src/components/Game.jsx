@@ -16,7 +16,8 @@ var correctuserloggedwords=0;
 let x, y = 3000, z = 0;
 var missedwordsss = 0;
 var calc;
-
+var finalscore=0;
+var finalcorrectwords=0
 
 
 function Game() {
@@ -105,6 +106,8 @@ function Game() {
             })
         }
         else {
+            finalscore=score.current
+            finalcorrectwords=correctuserloggedwords
             setGame(false);
             await updateleaderboard(correctuserwords)
         }
@@ -168,7 +171,7 @@ function Game() {
                     <div className="gamewindow1">
                         <div className="gameovervideo">
                             <div className="gameovertext">
-                                <h1 className="gameoverscore">Your Score: {score.current} <br></br><br></br>Your correct words: {correctuserloggedwords}<br></br></h1> </div>
+                                <h1 className="gameoverscore">Your Score: {finalscore} <br></br><br></br>Your correct words: {finalcorrectwords}<br></br></h1> </div>
                             <video onClick={() => setGame(true)} src="/videos/gameover.mp4" autoPlay loop muted type="video/mp4" className="gameover" /></div>
                     </div>
                     <video className='gamebg' src='/videos/export_backg_crop.mp4' autoPlay loop muted />
