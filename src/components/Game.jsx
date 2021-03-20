@@ -147,7 +147,7 @@ function Game() {
                             <h1>{stages.current}</h1>
                         </div>
                         <div id="userinputfield">
-                            <input onPaste={(e)=>{e.preventDefault()
+                            <input autoFocus="true" onPaste={(e)=>{e.preventDefault()
                             return false;}} 
                             onCopy={(e)=>{e.preventDefault()
                                 return false;}}
