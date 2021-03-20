@@ -23,7 +23,7 @@ useEffect(() => {
             <div className="hero-container">
             <video src="/videos/leaderboard.mp4" autoPlay loop muted type="video/mp4" className="bg"/>
             <div>
-              <center><h1 className="lead">LEADERBOARD</h1></center>
+              <center><h1 className="lead">LEADERBOARD</h1>
               <table id="lBoard" className="tabla" align ="center">
                 <tbody className='ranking'>
                   {
@@ -37,6 +37,7 @@ useEffect(() => {
                   }
                   </tbody>
                 </table>
+                </center>
               </div>
             </div>
         </div>
