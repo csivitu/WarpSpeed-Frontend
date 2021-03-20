@@ -7,7 +7,12 @@ const useKeyPress = callback => {
   //3
   useEffect(() => {
     //4
-    const downHandler = ({ key }) => {
+    const downHandler = ({ key,which}) => {
+      if (which===13){
+         setKeyPressed('\n');
+         callback && callback(key);
+         return;
+        }
       if (keyPressed !== key && key.length === 1) {
         setKeyPressed(key);
         callback && callback(key);

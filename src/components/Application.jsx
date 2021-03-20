@@ -3,49 +3,40 @@ import firebase from '../firebase'
 import Actualplay from './AfterLogin'
 import './buttons.css' 
 import { ImGoogle } from 'react-icons/im'
+import { login } from "../api/Request"
+
+const axios = require('axios').default;
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
 const SignInGoogle = () =>{
   firebase.auth().signInWithPopup(provider).then((result) => {
-    /** @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
-    // This gives you a Google Access Token. You can use it to access the Google API.
     var token = credential.accessToken;
-    // The signed-in user info.
     var user = result.user;
-    // ...
   }).catch((error) => {
-    // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    // The email of the user's account used.
     var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
-    // ...
   });
 }
-
 export class Application extends Component {
   state={
     isLogIn:false,
   }
- 
+  
     componentDidMount = () => {      
       firebase.auth().onAuthStateChanged(user =>{
         this.setState({
           isLogIn: !!user
         })
         if (user){
-          firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
-            console.log(user.email)
-            console.log(idToken)
-            // Send token to your backend via HTTPS
-            // ...
+          firebase.auth().currentUser.getIdToken(true).then( async function(idToken){
+            await login(user.email,user.displayName)
           }).catch(function(error) {
             console.log(error)
-            // Handle error
+          
           });
         }
       })

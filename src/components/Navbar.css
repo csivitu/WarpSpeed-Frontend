@@ -1,32 +1,20 @@
 .bottom{
-    margin-left:5%;   
-    position:fixed;
+    position:absolute;
     bottom:2%;
+    z-index: 3;
+}
+.btns{
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    gap:15em; 
+    grid-auto-flow: column;
+    width:100vw;
 }
 
-ul{
-    list-style-type:none;
-    margin:0;
-    padding:0;
-}
-
-#navbarlist li{
-    display:inline;
-    color:white;
+.btnsitem{
     font-size:1.3em;
 }
-.navlinks img{
-    display:none;
-    opacity:0.45;
-    -moz-opacity:0.45;
-    filter:alpha(opacity=45);
-    width: 50px;
-    background-attachment: fixed;
-    background-image: url("../navbar.gif");
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
 
 a{
     color:gray;
