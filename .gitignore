@@ -1,7 +1,6 @@
 src/components/words/file.json
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 warpspeedkey.json
-src/firebase.js
 
 /src/components/words
 # dependencies
