@@ -1,0 +1,31 @@
+.bottom{
+    position:absolute;
+    bottom:2%;
+    z-index: 3;
+}
+.btns{
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    gap:15em; 
+    grid-auto-flow: column;
+    width:100vw;
+}
+
+.btnsitem{
+    font-size:1.3em;
+}
+
+a{
+    color:gray;
+    text-decoration: none;
+}
+
+a:hover{
+    color:white;
+    transition:0.3s;
+}
+
+iframe{
+    display:none;
+}

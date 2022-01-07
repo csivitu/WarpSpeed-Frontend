@@ -1,0 +1,112 @@
+.main{
+    margin:0;
+    top:0;
+    left:0;
+    padding:0; 
+    max-height:100%;
+    max-width:100%;
+    position:relative;
+}
+
+.gamewindowcontainer{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    color:white;
+    border: 0.15em solid white;
+    position:absolute;
+    z-index: 2;
+    top:90%;
+    left:50%;
+    transform:translate(-50%,-50%)
+}
+.gamewindowcontainer>div{
+    display: inline-block;
+    padding:10px;
+}
+
+.gamewindow{
+    display:flex;
+    margin:0 auto;
+    height:100vh;
+    width:100vw;
+    position:fixed;
+    justify-content: center;
+    align-content: center;
+}
+.gamewindow1{
+    display:grid;
+    height:100vh;
+    width:100vw;
+    position:fixed;
+    justify-content:center;
+    align-content: center;
+    z-index: 1;
+}
+.gameover{
+    cursor:pointer;
+    width:30vw;
+}
+
+.playagainbtn{
+    position:absolute;
+    z-index:1;
+}
+.gamebg{
+    width:100vw;
+    height:100vh;
+    object-fit: fill;
+    z-index: auto;
+    
+}
+
+.score{
+    font-size:2em;
+    color:white;
+    position: inherit;
+    font-family:"GTAmericaThin";
+}
+.gameoverscore{
+    font-size:2em;
+    color:white;
+    font-family:"GTAmericaThin";
+    z-index: 1;
+}
+#textwords{
+    z-index: auto;
+    width:100%;
+    height:100%;
+    font-size:25px;
+}
+.gameovervideo{
+    position:relative;
+}
+.gameovertext{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    width:100%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.videoinsidegamewindow{
+    position:relative;
+}
+.videoinsidegamewindow video{
+    z-index:0;
+    position:relative;
+}
+
+
+
+@keyframes stage1{
+    0%{
+        left:-5%;
+    }
+    100%{
+        left:100%;
+    }
+}
