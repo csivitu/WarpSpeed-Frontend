@@ -1,0 +1,81 @@
+.afterlogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:25%;
+}
+
+.buttons{
+    cursor:pointer;
+    background: none;
+    border: none ;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    border: 0.15em solid white;
+    position:relative;
+  }
+
+
+.buttons>img:hover{
+    filter:invert(100%)
+}
+
+.buttons:hover{
+    border: 0.15em solid white;
+    background-color: white;
+    transition:0.5s;
+    color:black;
+}
+
+
+h2{
+    font-family:"GTAmericaRegular" !important;
+    font-size:100px;
+    text-transform: uppercase;
+    color:white;
+    letter-spacing: 0.3em;
+    text-align:center;
+}
+.signup-button{
+    align-self: center;  
+}
+
+
+.googlebuttoninside{
+    padding:10px;
+
+}
+
+.insidebutton{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup{
+    display:grid;
+    align-self: center;
+    justify-items: center;
+}
+
+.signupcontainer{
+    height:100vh;
+    width:100vw;
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    
+}
+.container{
+    display:grid;
+    height:100vh;
+    width:100vw;
+    justify-content: center;
+    align-content:center;
+}
