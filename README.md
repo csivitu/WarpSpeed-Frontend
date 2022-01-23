@@ -4,23 +4,21 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/csivitu/Template">
+  <a href="https://github.com/csivitu/warpspeed-frontend">
     <img src="https://csivit.com/images/favicon.png" alt="Logo" width="80">
   </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">Warpspeed</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
-    <br />
-    <a href="https://github.com/csivitu/Template"><strong>Explore the docs »</strong></a>
+    A journey through space presented through the construct of a game.  
     <br />
     <br />
-    <a href="https://github.com/csivitu/Template">View Demo</a>
+    <a href="https://warpspeed.csivit.com">View Demo</a>
     ·
-    <a href="https://github.com/csivitu/Template/issues">Report Bug</a>
+    <a href="https://github.com/csivitu/warpspeed-frontend/issues">Report Bug</a>
     ·
-    <a href="https://github.com/csivitu/Template/issues">Request Feature</a>
+    <a href="https://github.com/csivitu/warpspeed-frontend/issues">Request Feature</a>
   </p>
 </p>
 
@@ -29,34 +27,37 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contributors](#contributors-)
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contributors](#contributors)
 
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<br>
+<p align="center">
+<a href="https://warpspeed.csivit.com">
+<img src="./public/images/Warpspeed.png" height="50"/>
+</a>
+</p>
+<br>
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`Template`
+Warpspeed is a fun typing game created for the event ["Devspace"](https://csivit.com/#events) during the year 2021
 
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [React](https://reactjs.org/)
+* [Node](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
 
 
 
@@ -77,28 +78,41 @@ npm install npm@latest -g
  
 1. Clone the repo
 ```sh
-git clone https://github.com/csivitu/Template.git
+git clone https://github.com/csivitu/warpspeed-frontend.git
 ```
 2. Install NPM packages
 ```sh
 npm install
 ```
-
-
+3. Configure .env with your firebase config
+```sh
+#.env
+REACT_APP_BASE_URL=
+REACT_APP_FIREBASE_API_KEY=
+REACT_APP_FIREBASE_AUTH_DOMAIN=
+REACT_APP_FIREBASE_DATABASEURL=
+REACT_APP_FIREBASE_PROJECT_ID=
+REACT_APP_FIREBASE_STORAGE_BUCKET=
+REACT_APP_FIREBASE_MESSAGINGID=
+REACT_APP_FIREBASE_APP_ID=
+```
+4. Set up [Warpspeed-Backend](https://github.com/csivitu/WarpSpeed-Backend)
+```sh
+git clone https://github.com/csivitu/WarpSpeed-Backend.git
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+<img src="./assets/homepage.gif">
+<img src="./assets/play.gif">
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+https://user-images.githubusercontent.com/72266283/150697247-68d444f3-9acc-4b49-a99e-d21e92cadddb.mp4
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<img src="./assets/scorecard.gif">
 
 
 
 <!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/csivitu/Template/issues) for a list of proposed features (and known issues).
 
 
 
@@ -127,5 +141,20 @@ Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more informati
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [csivitu-shield]: https://img.shields.io/badge/csivitu-csivitu-blue
 [csivitu-url]: https://csivit.com
-[issues-shield]: https://img.shields.io/github/issues/csivitu/Template.svg?style=flat-square
-[issues-url]: https://github.com/csivitu/Template/issues
+[issues-shield]: https://img.shields.io/github/issues/csivitu/warpspeed-frontend.svg?style=flat-square
+[issues-url]: https://github.com/csivitu/warpspeed-frontend/issues
+
+
+## Contributors 
+
+Thanks goes to these wonderful people:
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/sanjaybaskaran01"><img src="https://avatars.githubusercontent.com/u/72266283?v=4" width="100px;" alt=""/><br /><sub><b>Sanjay Baskaran</b></sub></a><br /><a href="https://github.com/csivitu/warpspeed-frontend/commits?author=sanjaybaskaran01" title="Code">💻</a> <a href="https://github.com/csivitu/warpspeed-frontend/commits?author=sanjaybaskaran01" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/rakeshprask"><img src="https://avatars.githubusercontent.com/u/77398468?v=4" width="100px;" alt=""/><br /><sub><b>Rakesh Prasanna</b></sub></a><br /><a href="https://github.com/csivitu/warpspeed-frontend/commits?author=rakeshprask" title="Code">💻</a> <a href="https://github.com/csivitu/warpspeed-frontend/commits?author=rakeshprask" title="Documentation">📖</a></td>
+  </tr>
+</table>
